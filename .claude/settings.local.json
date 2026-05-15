@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.anthropic.com)",
+      "PowerShell($content = [System.IO.File]::ReadAllBytes\\(\"C:\\\\Users\\\\Embracy\\\\.claude\\\\projects\\\\c--Users-Embracy-Desktop-Things-Scripts-FS-website\\\\87aa7a2b-b5c2-49c0-8aec-ab9e63d291bd\\\\tool-results\\\\webfetch-1778818604368-qmd7qv.bin\"\\); $stream = [System.IO.MemoryStream]::new\\($content\\); $gz = [System.IO.Compression.GZipStream]::new\\($stream, [System.IO.Compression.CompressionMode]::Decompress\\); $reader = [System.IO.StreamReader]::new\\($gz, [System.Text.Encoding]::UTF8\\); $text = $reader.ReadToEnd\\(\\); [System.IO.File]::WriteAllText\\(\"C:\\\\Users\\\\Embracy\\\\.claude\\\\projects\\\\c--Users-Embracy-Desktop-Things-Scripts-FS-website\\\\87aa7a2b-b5c2-49c0-8aec-ab9e63d291bd\\\\tool-results\\\\design_decoded.html\", $text, [System.Text.Encoding]::UTF8\\); Write-Output \"Done, length: $\\($text.Length\\)\")",
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\Embracy\\\\Desktop\\\\Things\\\\Scripts\\\\FS-website\" -Recurse -File | Select-Object @{n='Path';e={$_.FullName.Replace\\('c:\\\\Users\\\\Embracy\\\\Desktop\\\\Things\\\\Scripts\\\\FS-website\\\\',''\\)}}, @{n='KB';e={[math]::Round\\($_.Length/1KB,1\\)}} | Format-Table -AutoSize)",
+      "Bash(Get-ChildItem \"c:\\\\Users\\\\Embracy\\\\Desktop\\\\Things\\\\Scripts\\\\FS-website\" -Recurse -Include \"*.png\",\"*.jpg\",\"*.jpeg\",\"*.webp\",\"*.gif\",\"*.svg\")",
+      "Bash(Select-Object FullName, Length)"
+    ]
+  }
+}
