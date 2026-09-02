@@ -1,0 +1,6 @@
+# Vercel CLI local link (contains org/project IDs — set these as CI secrets instead)
+.vercel
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
