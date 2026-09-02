@@ -13,8 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Plausible Analytics (privacy-friendly, cookieless) -->
-  <script defer data-domain="flexispace.com.au" src="https://plausible.io/js/script.outbound-links.js"></script>
+  <!-- Plausible Analytics (cookieless) — pageviews + outbound links + file downloads -->
+  <script defer data-domain="flexispace.com.au" src="https://plausible.io/js/script.file-downloads.outbound-links.js"></script>
   <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 </head>
 <body>
@@ -764,7 +764,16 @@
         </ul>
       </div>
 
-      <form class="contact-form" action="#" method="post" novalidate>
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="post" novalidate>
+        <!-- Web3Forms delivery: submissions are emailed to the address tied to this access key (sales@billbuddy.com). Replace with the real FlexiSpace key from web3forms.com if a separate inbox is wanted. -->
+        <input type="hidden" name="access_key" value="c20a48f2-11ed-449d-ab73-9ecbb30e9c74" />
+        <input type="hidden" name="subject" value="New FlexiSpace enquiry" />
+        <input type="hidden" name="from_name" value="FlexiSpace website" />
+        <!-- Honeypot spam trap (hidden from real users) -->
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none !important;" />
+
+        <p id="form-error" role="alert" aria-live="polite" style="display:none;color:#c0392b;margin:0 0 12px;font-size:.9rem;"></p>
+
         <div class="form-row">
           <div class="form-group">
             <label for="f-name">Name <span aria-hidden="true">*</span></label>
@@ -801,6 +810,11 @@
         <button type="submit" class="btn btn-primary btn-lg btn-full">Send Enquiry</button>
         <p class="form-note">We typically respond within one business day.</p>
       </form>
+
+      <div id="form-success" class="form-success" role="status" aria-live="polite">
+        <h3>Thanks — we've got your enquiry.</h3>
+        <p>A member of the FlexiSpace team will be in touch within one business day.</p>
+      </div>
 
     </div>
   </div>
@@ -846,33 +860,7 @@
   </div>
 </footer>
 
-<script>
-  // Mobile nav toggle
-  const toggle = document.querySelector('.nav-toggle');
-  const navMenu = document.getElementById('nav-menu');
-  toggle.addEventListener('click', () => {
-    const open = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!open));
-    navMenu.classList.toggle('nav-links--open', !open);
-  });
-  // Close on link click
-  navMenu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      toggle.setAttribute('aria-expanded', 'false');
-      navMenu.classList.remove('nav-links--open');
-    });
-  });
-
-  // Track enquiry form submissions as a Plausible goal
-  const enquiryForm = document.querySelector('.contact-form');
-  if (enquiryForm) {
-    enquiryForm.addEventListener('submit', () => {
-      if (typeof window.plausible === 'function') {
-        window.plausible('Enquiry', { props: { industry: document.getElementById('f-industry').value || 'unknown' } });
-      }
-    });
-  }
-</script>
+<script src="js/main.js" defer></script>
 
 </body>
 </html>

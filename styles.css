@@ -1000,6 +1000,27 @@ button, input, select, textarea {
   font-size: 12.5px; color: var(--muted); text-align: center; margin-top: -4px;
 }
 
+/* Validation error state on inputs */
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+  border-color: #c0392b;
+  background: #fdf2f1;
+}
+
+/* Success message shown after a confirmed Web3Forms send */
+.form-success {
+  display: none;
+  padding: 28px 24px;
+  border: 1px solid var(--line, #e2e8f4);
+  border-radius: 14px;
+  background: #f2f8f2;
+  text-align: center;
+}
+.form-success.visible { display: block; }
+.form-success h3 { margin: 0 0 6px; color: var(--ink, #0b1b3b); }
+.form-success p { margin: 0; color: var(--muted, #5a6478); }
+
 
 /* ════════════════════════════════════════════════════════════
    FOOTER
