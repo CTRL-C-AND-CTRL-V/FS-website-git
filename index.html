@@ -46,7 +46,6 @@
       <a href="#solutions">Solutions</a>
       <a href="#features">Features</a>
       <a href="#payments">Payments</a>
-      <a href="#partners">Partners</a>
       <a href="#clients">Clients</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -94,79 +93,24 @@
       </div>
     </div>
 
-    <!-- Dashboard mockup -->
+    <!-- Dual-device hero: desktop booking dashboard (laptop) + phone booking app -->
     <div class="hero-visual" aria-hidden="true">
-      <div class="dashboard-card">
-        <div class="db-header">
-          <div class="db-logo-row">
-            <svg width="18" height="18" viewBox="0 0 64 64" fill="none">
-              <rect x="4"  y="4"  width="24" height="24" rx="5" fill="#D6E0FF"/>
-              <rect x="36" y="4"  width="24" height="24" rx="5" fill="#9DB7FF"/>
-              <rect x="4"  y="36" width="24" height="24" rx="5" fill="#5E8CFF"/>
-              <rect x="36" y="36" width="24" height="24" rx="5" fill="#1E5BFF"/>
-              <circle cx="48" cy="48" r="4" fill="#fff"/>
-            </svg>
-            <span class="db-brand">FlexiSpace</span>
+      <div class="hero-shots">
+        <div class="device-laptop">
+          <div class="device-laptop__frame">
+            <img src="assets/hero-desktop.png" width="1406" height="901"
+                 alt="FlexiSpace court booking dashboard on desktop" loading="eager" />
           </div>
-          <span class="db-location">All Locations</span>
+          <div class="device-laptop__base"></div>
         </div>
-
-        <div class="db-stats">
-          <div class="db-stat">
-            <span class="db-stat__val">94<span class="db-unit">%</span></span>
-            <span class="db-stat__lbl">Occupancy</span>
-          </div>
-          <div class="db-stat">
-            <span class="db-stat__val">38</span>
-            <span class="db-stat__lbl">Active Bookings</span>
-          </div>
-          <div class="db-stat">
-            <span class="db-stat__val db-stat__val--green">$12.4k</span>
-            <span class="db-stat__lbl">Revenue MTD</span>
-          </div>
-        </div>
-
-        <div class="db-section-title">Availability Overview</div>
-        <div class="db-availability">
-          <div class="db-avail-row">
-            <span class="db-avail-name">Court A — Morning</span>
-            <span class="db-avail-badge db-avail-badge--booked">Booked</span>
-          </div>
-          <div class="db-avail-row">
-            <span class="db-avail-name">Unit 14B — Storage</span>
-            <span class="db-avail-badge db-avail-badge--available">Available</span>
-          </div>
-          <div class="db-avail-row">
-            <span class="db-avail-name">Court B — Afternoon</span>
-            <span class="db-avail-badge db-avail-badge--available">Available</span>
-          </div>
-          <div class="db-avail-row">
-            <span class="db-avail-name">Unit 07 — Storage</span>
-            <span class="db-avail-badge db-avail-badge--booked">Booked</span>
-          </div>
-        </div>
-
-        <div class="db-section-title" style="margin-top:16px">Recent Payments</div>
-        <div class="db-payments">
-          <div class="db-pay-row">
-            <span class="db-pay-name">Lee Wei Ming</span>
-            <span class="db-pay-method">Visa</span>
-            <span class="db-pay-status db-pay-status--paid">Paid</span>
-          </div>
-          <div class="db-pay-row">
-            <span class="db-pay-name">Tan Siew Lin</span>
-            <span class="db-pay-method">Apple Pay</span>
-            <span class="db-pay-status db-pay-status--paid">Paid</span>
-          </div>
-          <div class="db-pay-row">
-            <span class="db-pay-name">Ahmad Rashid</span>
-            <span class="db-pay-method">Direct Debit</span>
-            <span class="db-pay-status db-pay-status--pending">Pending</span>
+        <div class="device-phone">
+          <div class="device-phone__frame">
+            <img src="assets/hero-mobile.png" width="326" height="712"
+                 alt="FlexiSpace self-storage booking on mobile" loading="eager" />
           </div>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -520,13 +464,13 @@
       <div class="payments-methods">
         <p class="payments-methods__label">Supported payment methods</p>
         <div class="pay-grid">
-          <div class="pay-badge"><img src="assets/visa'.png" alt="Visa" class="pay-logo" /></div>
-          <div class="pay-badge"><img src="assets/Mastercard.jpg" alt="Mastercard" class="pay-logo" /></div>
+          <div class="pay-badge"><img src="assets/visa.svg" alt="Visa" class="pay-logo" /></div>
+          <div class="pay-badge"><img src="assets/mastercard.svg" alt="Mastercard" class="pay-logo" /></div>
           <div class="pay-badge"><img src="assets/Google_Pay_Logo.svg" alt="Google Pay" class="pay-logo" /></div>
-          <div class="pay-badge"><img src="assets/applepay.png" alt="Apple Pay" class="pay-logo" /></div>
-          <div class="pay-badge"><img src="assets/wechatpay.svg" alt="WeChat Pay" class="pay-logo" /></div>
-          <div class="pay-badge"><img src="assets/PayTo.jpg" alt="PayTo" class="pay-logo" /></div>
-          <div class="pay-badge"><img src="assets/PayID.png" alt="PayID" class="pay-logo" /></div>
+          <div class="pay-badge"><img src="assets/apple-pay.svg" alt="Apple Pay" class="pay-logo pay-logo--bump" /></div>
+          <div class="pay-badge"><img src="assets/wechatpay.svg" alt="WeChat Pay" class="pay-logo pay-logo--bump" /></div>
+          <div class="pay-badge"><img src="assets/payto.png" alt="PayTo" class="pay-logo pay-logo--bump" /></div>
+          <div class="pay-badge"><img src="assets/payid.png" alt="PayID" class="pay-logo pay-logo--bump" /></div>
         </div>
         <div class="powered-by">
           <span class="powered-by__label">Payments powered by</span>
@@ -669,38 +613,6 @@
 
 
 <!-- ════════════════════════════════════════════════════════════
-     PARTNERS
-════════════════════════════════════════════════════════════ -->
-<section class="partners" id="partners" aria-labelledby="partners-title">
-  <div class="container">
-    <div class="section-head">
-      <p class="eyebrow">Partners</p>
-      <h2 id="partners-title">Proudly partnered with trusted technology and payment providers</h2>
-      <p>FlexiSpace is built with scalable cloud infrastructure and payment capability to support growing businesses.</p>
-    </div>
-
-    <div class="partner-grid">
-      <div class="partner-card">
-        <div class="partner-card__logo" aria-label="Amazon Web Services">
-          <img src="assets/AWS.png" alt="Amazon Web Services" style="height:80px;width:auto;object-fit:contain;">
-        </div>
-        <h4>Amazon Web Services</h4>
-        <p>Enterprise-grade cloud infrastructure ensuring reliability, security, and scalability across every deployment.</p>
-      </div>
-
-      <div class="partner-card">
-        <div class="partner-card__logo" aria-label="Global Payments">
-          <img src="assets/GlobalPayment.png" alt="Global Payments" style="height:80px;width:auto;object-fit:contain;">
-        </div>
-        <h4>Global Payments</h4>
-        <p>Payment processing capability that supports multiple methods and currencies for businesses of all sizes.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ════════════════════════════════════════════════════════════
      CLIENTS
 ════════════════════════════════════════════════════════════ -->
 <section class="clients" id="clients" aria-labelledby="clients-title">
@@ -717,7 +629,7 @@
           <img src="assets/svg/savvystorage.jpg" alt="Savvy Storage Centres" />
         </div>
         <p class="client-card__type">Self-Storage</p>
-        <p class="client-card__desc">Managing unit availability, customer onboarding, and payments across multiple locations.</p>
+        <p class="client-card__desc">Managing drive-up self storage plus caravan, boat and vehicle storage across multiple Melbourne locations — availability, onboarding and payments in one place.</p>
       </div>
 
       <div class="client-card">
@@ -725,7 +637,7 @@
           <img src="assets/svg/VictoriaBadmintonCentre.jpg" alt="Victoria Badminton Centre" />
         </div>
         <p class="client-card__type">Sports Court</p>
-        <p class="client-card__desc">Running court bookings, scheduling, and payment collection for a busy badminton facility.</p>
+        <p class="client-card__desc">Court bookings, scheduling and payment collection for one of Australia's largest indoor badminton and pickleball venues.</p>
       </div>
     </div>
   </div>
@@ -852,7 +764,6 @@
       </div>
       <div class="footer-col">
         <p class="footer-col__title">Company</p>
-        <a href="#partners">Partners</a>
         <a href="#clients">Clients</a>
         <a href="#contact">Contact</a>
       </div>

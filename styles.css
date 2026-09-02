@@ -37,7 +37,7 @@
 
 /* ── Reset ───────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 84px; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 24px; }
 body {
   font-family: var(--font);
   font-size: 16px;
@@ -256,8 +256,8 @@ button, input, select, textarea {
 }
 .hero-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  grid-template-columns: 1fr 1.7fr; /* ~37/63 — give the product screenshot more room */
+  gap: 48px;
   align-items: center;
   padding-bottom: 80px;
 }
@@ -285,11 +285,66 @@ button, input, select, textarea {
 }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
-/* ── Dashboard mockup ── */
+/* ── Hero product screenshot ── */
 .hero-visual {
   display: flex;
   justify-content: flex-end;
 }
+.hero-shots { position: relative; width: 100%; max-width: 760px; margin-left: auto; padding-bottom: 22px; }
+
+/* ── Laptop frame ── */
+.device-laptop { position: relative; width: 96%; }
+.device-laptop__frame {
+  background: #0d1a33;
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow: 0 30px 60px -24px rgba(11,27,59,.45), 0 10px 24px -14px rgba(11,27,59,.30);
+}
+.device-laptop__frame img { display: block; width: 100%; height: auto; border-radius: 5px; }
+.device-laptop__base {
+  position: relative;
+  width: 111%;
+  margin-left: -5.5%;
+  height: 15px;
+  background: linear-gradient(180deg, #d3d9e8 0%, #a7b3cd 100%);
+  border-radius: 0 0 13px 13px;
+  box-shadow: inset 0 2px 2px rgba(255,255,255,.55), 0 12px 20px -12px rgba(11,27,59,.45);
+}
+.device-laptop__base::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 15%; height: 6px;
+  background: #93a0bd;
+  border-radius: 0 0 7px 7px;
+}
+
+/* ── Phone frame (overlaps the laptop, bottom-right) ── */
+.device-phone {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 23%;
+}
+.device-phone__frame {
+  position: relative;
+  background: #0b1424;
+  border-radius: 22px;
+  padding: 5px;
+  box-shadow: 0 22px 44px -14px rgba(11,27,59,.55);
+}
+.device-phone__frame img { display: block; width: 100%; height: auto; border-radius: 17px; }
+.device-phone__frame::before {
+  content: '';
+  position: absolute;
+  top: 10px; left: 50%; transform: translateX(-50%);
+  width: 30%; height: 4px;
+  background: rgba(255,255,255,.55);
+  border-radius: 3px;
+  z-index: 2;
+}
+
+/* ── Dashboard mockup (legacy, unused) ── */
 .dashboard-card {
   width: 100%;
   max-width: 400px;
@@ -382,11 +437,6 @@ button, input, select, textarea {
   flex-direction: column;
   gap: 12px;
 }
-
-/* Stagger heights for visual rhythm */
-.thought--2 { margin-top: 32px; }
-.thought--4 { margin-top: 32px; }
-.thought--6 { margin-top: 32px; }
 
 .thought__bubble {
   background: #fff;
@@ -746,11 +796,13 @@ button, input, select, textarea {
   color: rgba(255,255,255,.45);
 }
 .pay-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
 }
 .pay-badge {
+  flex: 0 0 calc((100% - 48px) / 4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -765,6 +817,8 @@ button, input, select, textarea {
   object-fit: contain;
   display: block;
 }
+/* Nudge selected marks up in size so the row reads balanced */
+.pay-logo--bump { transform: scale(1.25); }
 .powered-by {
   display: flex;
   align-items: center;
@@ -823,43 +877,6 @@ button, input, select, textarea {
   letter-spacing: -.01em; margin-bottom: 8px;
 }
 .report-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
-
-
-/* ════════════════════════════════════════════════════════════
-   PARTNERS
-════════════════════════════════════════════════════════════ */
-.partners {
-  background: var(--paper);
-  padding: var(--section-py) 0;
-}
-.partner-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 760px;
-  margin: 0 auto;
-}
-.partner-card {
-  background: var(--off);
-  border: 1px solid var(--border);
-  border-radius: var(--r-xl);
-  padding: 36px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 16px;
-}
-.partner-card__logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80px;
-}
-.partner-card h4 {
-  font-size: 17px; font-weight: 700; color: var(--ink); letter-spacing: -.01em;
-}
-.partner-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
 
 /* ════════════════════════════════════════════════════════════
@@ -1211,8 +1228,6 @@ button, input, select, textarea {
   .report-grid        { grid-template-columns: repeat(2, 1fr); }
   .solutions-grid     { grid-template-columns: 1fr 1fr; }
   .pain-thoughts      { grid-template-columns: repeat(2, 1fr); }
-  .thought--2, .thought--4, .thought--6 { margin-top: 0; }
-  .thought--3, .thought--4 { margin-top: 24px; }
 }
 
 @media (max-width: 860px) {
@@ -1235,13 +1250,13 @@ button, input, select, textarea {
 
   .hero-inner         { grid-template-columns: 1fr; padding-bottom: 48px; }
   .hero-visual        { justify-content: center; }
+  .hero-shots         { max-width: 500px; margin: 8px auto 0; }
   .dashboard-card     { max-width: 100%; }
   .pain-thoughts      { grid-template-columns: 1fr; }
   .thought--2, .thought--4, .thought--6 { margin-top: 0; }
   .solutions-grid     { grid-template-columns: 1fr; }
   .feature-categories { grid-template-columns: 1fr; }
   .payments-inner     { grid-template-columns: 1fr; gap: 40px; }
-  .partner-grid       { grid-template-columns: 1fr; max-width: 420px; }
   .client-grid        { grid-template-columns: 1fr; max-width: 480px; }
   .contact-inner      { grid-template-columns: 1fr; }
   .cta-band__inner    { flex-direction: column; align-items: flex-start; }
@@ -1262,8 +1277,8 @@ button, input, select, textarea {
   .section-head h2 { font-size: 26px; }
   .form-row  { grid-template-columns: 1fr; }
   .report-grid { grid-template-columns: 1fr; }
-  .pay-grid  { grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  .pay-badge { height: 64px; padding: 12px 14px; }
+  .pay-grid  { gap: 10px; }
+  .pay-badge { flex-basis: calc((100% - 20px) / 3); height: 64px; padding: 12px 14px; }
   .pain-resolution { padding: 28px 24px; flex-direction: column; gap: 18px; }
   .dashboard-card { padding: 14px; }
   .db-stats { padding: 10px 6px; }
