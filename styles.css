@@ -925,6 +925,8 @@ button, input, select, textarea {
 .form-note {
   font-size: 12.5px; color: var(--muted); text-align: center; margin-top: -4px;
 }
+.form-note a { color: var(--mark); }
+.form-note a:hover { text-decoration: underline; }
 
 /* Validation error state on inputs */
 .form-group input.error,
