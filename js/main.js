@@ -69,7 +69,7 @@
     form.addEventListener('focusin', function () {
       if (!formStarted) {
         formStarted = true;
-        track('Demo Form Start', { page: path });
+        track('Enquiry Start', { page: path });
       }
     });
 

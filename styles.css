@@ -344,78 +344,6 @@ button, input, select, textarea {
   z-index: 2;
 }
 
-/* ── Dashboard mockup (legacy, unused) ── */
-.dashboard-card {
-  width: 100%;
-  max-width: 400px;
-  background: #fff;
-  border-radius: var(--r-xl);
-  border: 1px solid var(--border);
-  box-shadow: var(--sh-lg);
-  padding: 20px;
-  font-size: 13px;
-}
-.db-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 18px;
-}
-.db-logo-row { display: flex; align-items: center; gap: 8px; }
-.db-brand { font-size: 14px; font-weight: 700; color: var(--ink); letter-spacing: -.01em; }
-.db-location {
-  font-size: 11px; font-weight: 600; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--muted);
-  background: var(--off); padding: 4px 10px; border-radius: 100px;
-}
-.db-stats {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 8px;
-  background: var(--off);
-  border-radius: var(--r);
-  padding: 14px 10px;
-  margin-bottom: 18px;
-}
-.db-stat { display: flex; flex-direction: column; align-items: center; gap: 2px; }
-.db-stat__val {
-  font-size: 18px; font-weight: 800; color: var(--ink); letter-spacing: -.02em;
-}
-.db-stat__val--green { color: var(--success); }
-.db-unit { font-size: 13px; }
-.db-stat__lbl { font-size: 10px; color: var(--muted); font-weight: 500; text-align: center; }
-.db-section-title {
-  font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 8px;
-}
-.db-availability { display: flex; flex-direction: column; gap: 6px; }
-.db-avail-row {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 8px 10px; background: var(--off); border-radius: var(--r-sm);
-}
-.db-avail-name { font-size: 12px; font-weight: 500; color: var(--ink); }
-.db-avail-badge {
-  font-size: 10px; font-weight: 700; letter-spacing: .08em;
-  text-transform: uppercase; padding: 3px 8px; border-radius: 100px;
-}
-.db-avail-badge--booked   { background: #fef3c7; color: #92400e; }
-.db-avail-badge--available{ background: #d1fae5; color: #065f46; }
-
-.db-payments { display: flex; flex-direction: column; gap: 5px; }
-.db-pay-row {
-  display: flex; align-items: center; gap: 8px;
-  padding: 7px 10px; background: var(--off); border-radius: var(--r-sm);
-}
-.db-pay-name   { flex: 1; font-size: 12px; font-weight: 500; color: var(--ink); }
-.db-pay-method { font-size: 11px; color: var(--muted); }
-.db-pay-status {
-  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
-  padding: 2px 7px; border-radius: 100px;
-}
-.db-pay-status--paid    { background: #d1fae5; color: #065f46; }
-.db-pay-status--pending { background: #fef3c7; color: #92400e; }
-
-
 /* ════════════════════════════════════════════════════════════
    PAIN POINTS — Thought bubbles
 ════════════════════════════════════════════════════════════ */
@@ -728,25 +656,6 @@ button, input, select, textarea {
 }
 .fmv-notif__badge--email { background: #e5d9ff; color: #7c3aed; }
 
-/* Payment pills mini */
-.fmv-pay-row {
-  display: flex; flex-wrap: wrap; gap: 6px;
-}
-.fmv-pay-pill {
-  padding: 4px 10px;
-  border-radius: 100px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .06em;
-  background: rgba(255,255,255,.8);
-  border: 1px solid rgba(0,0,0,.1);
-  color: var(--ink);
-}
-.fmv-pay-pill--visa { background: #1A1F71; color: #fff; }
-.fmv-pay-pill--mc   { background: #252525; color: #fff; }
-.fmv-pay-pill--wc   { background: #09be5d; color: #fff; }
-.fmv-pay-pill--gp   { background: #4285f4; color: #fff; }
-
 /* Bar chart mini */
 .fmv-chart {
   display: flex;
@@ -1029,7 +938,7 @@ button, input, select, textarea {
 .form-success {
   display: none;
   padding: 28px 24px;
-  border: 1px solid var(--line, #e2e8f4);
+  border: 1px solid var(--border);
   border-radius: 14px;
   background: #f2f8f2;
   text-align: center;
@@ -1251,9 +1160,7 @@ button, input, select, textarea {
   .hero-inner         { grid-template-columns: 1fr; padding-bottom: 48px; }
   .hero-visual        { justify-content: center; }
   .hero-shots         { max-width: 500px; margin: 8px auto 0; }
-  .dashboard-card     { max-width: 100%; }
   .pain-thoughts      { grid-template-columns: 1fr; }
-  .thought--2, .thought--4, .thought--6 { margin-top: 0; }
   .solutions-grid     { grid-template-columns: 1fr; }
   .feature-categories { grid-template-columns: 1fr; }
   .payments-inner     { grid-template-columns: 1fr; gap: 40px; }
@@ -1280,9 +1187,6 @@ button, input, select, textarea {
   .pay-grid  { gap: 10px; }
   .pay-badge { flex-basis: calc((100% - 20px) / 3); height: 64px; padding: 12px 14px; }
   .pain-resolution { padding: 28px 24px; flex-direction: column; gap: 18px; }
-  .dashboard-card { padding: 14px; }
-  .db-stats { padding: 10px 6px; }
-  .db-stat__val { font-size: 15px; }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; justify-content: center; }
   .feat-category { padding: 28px 24px; }

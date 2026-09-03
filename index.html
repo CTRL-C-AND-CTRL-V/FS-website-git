@@ -93,7 +93,7 @@
     </div>
 
     <!-- Dual-device hero: desktop booking dashboard (laptop) + phone booking app -->
-    <div class="hero-visual" aria-hidden="true">
+    <div class="hero-visual">
       <div class="hero-shots">
         <div class="device-laptop">
           <div class="device-laptop__frame">
@@ -671,6 +671,8 @@
         <input type="hidden" name="access_key" value="c20a48f2-11ed-449d-ab73-9ecbb30e9c74" />
         <input type="hidden" name="subject" value="New FlexiSpace enquiry" />
         <input type="hidden" name="from_name" value="FlexiSpace website" />
+        <!-- Fallback landing for no-JS submits (JS otherwise shows the inline success message) -->
+        <input type="hidden" name="redirect" value="https://flexispace.com.au/" />
         <!-- Honeypot spam trap (hidden from real users) -->
         <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none !important;" />
 
